@@ -1,0 +1,543 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #f6f8fc;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 250px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.menu-btn:hover {
+  background: #f1f3f4;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.logo-red { color: #ea4335; }
+.logo-blue { color: #4285f4; }
+.logo-yellow { color: #fbbc04; }
+.logo-green { color: #34a853; }
+
+.search-bar {
+  flex: 1;
+  max-width: 720px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f1f3f4;
+  font-size: 16px;
+}
+
+.search-btn {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.icon-btn:hover {
+  background: #f1f3f4;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  border-right: 1px solid #ddd;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.compose-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: #c2e7ff;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 32px;
+  transition: box-shadow 0.2s;
+}
+
+.compose-btn:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.folders {
+  margin-bottom: 32px;
+}
+
+.folder-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  margin: 2px 0;
+}
+
+.folder-btn:hover {
+  background: #f1f3f4;
+}
+
+.folder-btn.active {
+  background: #d3e3fd;
+  font-weight: 600;
+}
+
+.folder-icon {
+  width: 20px;
+  text-align: center;
+}
+
+.folder-name {
+  flex: 1;
+}
+
+.folder-count {
+  color: #5f6368;
+  font-size: 12px;
+}
+
+.labels h3 {
+  font-size: 14px;
+  color: #5f6368;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+
+.label {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  border-radius: 0 16px 16px 0;
+  font-size: 14px;
+}
+
+.label:hover {
+  background: #f1f3f4;
+}
+
+/* Email List */
+.email-list {
+  flex: 1;
+  background: white;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-list-header {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.email-list-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.email-list-header button:hover {
+  background: #f1f3f4;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.view-btn {
+  font-size: 12px !important;
+  color: #5f6368;
+}
+
+.emails-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Email Item */
+.email-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.email-item:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+  z-index: 2;
+}
+
+.email-item.selected {
+  background: #f6f8fc;
+  border-left: 3px solid #1a73e8;
+}
+
+.email-item.unread {
+  background: #f6f8fc;
+}
+
+.email-checkbox {
+  min-width: 20px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 50%;
+  color: #5f6368;
+}
+
+.star-btn.starred {
+  color: #f4b400;
+}
+
+.important-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.important-btn.important {
+  background: #f4b400;
+  color: white;
+}
+
+.email-sender {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.sender-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.email-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.email-subject {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.email-preview {
+  color: #5f6368;
+  font-weight: normal;
+}
+
+.email-time {
+  min-width: 70px;
+  text-align: right;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+/* Email View */
+.email-view {
+  flex: 1;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.email-view.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5f6368;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+.empty-state h2 {
+  margin-bottom: 8px;
+  color: #202124;
+}
+
+.email-view-header {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.back-btn:hover {
+  background: #f1f3f4;
+}
+
+.email-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.action-btn:hover {
+  background: #f1f3f4;
+}
+
+.email-content-view {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.email-subject-view {
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: #202124;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.sender-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.sender-avatar {
+  width: 40px;
+  height: 40px;
+  background: #1a73e8;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.sender-details {
+  flex: 1;
+}
+
+.sender-name-view {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.sender-email {
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.email-time-view {
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.email-body {
+  line-height: 1.6;
+  color: #202124;
+}
+
+.email-body p {
+  margin-bottom: 16px;
+}
+
+.email-reply {
+  border-top: 1px solid #ddd;
+  padding: 16px;
+}
+
+.email-reply textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.reply-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.send-btn {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.send-btn:hover {
+  background: #0d62d9;
+}
+
+.format-btn, .attach-btn, .more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #5f6368;
+}
+
+.format-btn:hover, .attach-btn:hover, .more-btn:hover {
+  background: #f1f3f4;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
