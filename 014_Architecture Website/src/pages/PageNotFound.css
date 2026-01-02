@@ -1,0 +1,130 @@
+.not-found-page {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) 0;
+  background-color: var(--bg-light);
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.not-found-graphic {
+  margin-bottom: var(--space-3xl);
+}
+
+.error-code {
+  font-size: 12rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: var(--space-xl);
+}
+
+.error-message h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+  color: var(--text-dark);
+}
+
+.error-message p {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.not-found-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-bottom: var(--space-3xl);
+  flex-wrap: wrap;
+}
+
+.not-found-links {
+  background-color: var(--bg-white);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.not-found-links p {
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+}
+
+.helpful-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-normal);
+}
+
+.helpful-link:hover {
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 8rem;
+  }
+
+  .error-message h1 {
+    font-size: 2rem;
+  }
+
+  .error-message p {
+    font-size: 1.125rem;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .not-found-actions .btn {
+    width: 100%;
+  }
+
+  .links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 6rem;
+  }
+
+  .error-message h1 {
+    font-size: 1.75rem;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+}
