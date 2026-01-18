@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/BookCard.tsx","./src/components/BookReader.tsx","./src/components/LoadingSpinner.tsx","./src/components/Navbar.tsx","./src/firebase/config.ts","./src/types/book.ts"],"version":"5.9.3"}
